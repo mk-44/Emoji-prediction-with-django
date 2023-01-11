@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Emojifier</title>
+	 <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</head>
+<body>
+	<div class="container">
+		<center>
+		<h4>Emojifier</h4>
+		<form method="POST">
+			{% csrf_token %}
+			<textarea name = 'content' class="input-field col s6"></textarea>
+			<button type="submit" class="waves-effect waves-light btn">Submit</button>
+		</form>
+
+
+		{% if content and emoji %}
+			<p>{{content}} : {{emoji}}</p>
+		{% endif %}
+		</center>
+	</div>
+
+</body>
+</html>
